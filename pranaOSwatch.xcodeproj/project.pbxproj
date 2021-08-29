@@ -25,6 +25,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9F5054F326DBCA010095A1F4 /* fakegps.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fakegps.h; sourceTree = "<group>"; };
 		9FB80B6526DBB78E00B72ADC /* pranaOSwatch */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = pranaOSwatch; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FB80B7326DBB7BF00B72ADC /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
 		9FB80B7426DBB7BF00B72ADC /* makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = makefile; sourceTree = "<group>"; };
@@ -98,6 +99,7 @@
 				9FB80B8826DBB81700B72ADC /* charbuffer.h */,
 				9FB80B8A26DBB9A100B72ADC /* charbuffer.cpp */,
 				9FB80B8E26DBBCA600B72ADC /* json_psram_allocator.h */,
+				9F5054F326DBCA010095A1F4 /* fakegps.h */,
 			);
 			path = utils;
 			sourceTree = "<group>";
