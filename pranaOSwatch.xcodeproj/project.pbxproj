@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9FB80B8526DBB7BF00B72ADC /* makefile in Sources */ = {isa = PBXBuildFile; fileRef = 9FB80B7426DBB7BF00B72ADC /* makefile */; };
 		9FB80B8626DBB7BF00B72ADC /* basejsonconfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FB80B7726DBB7BF00B72ADC /* basejsonconfig.cpp */; };
+		9FB80B8B26DBB9A100B72ADC /* charbuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FB80B8A26DBB9A100B72ADC /* charbuffer.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,6 +40,8 @@
 		9FB80B8326DBB7BF00B72ADC /* favicon.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = favicon.ico; sourceTree = "<group>"; };
 		9FB80B8426DBB7BF00B72ADC /* index.htm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.htm; sourceTree = "<group>"; };
 		9FB80B8826DBB81700B72ADC /* charbuffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = charbuffer.h; sourceTree = "<group>"; };
+		9FB80B8926DBB98400B72ADC /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		9FB80B8A26DBB9A100B72ADC /* charbuffer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = charbuffer.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +58,7 @@
 		9FB80B5C26DBB78E00B72ADC = {
 			isa = PBXGroup;
 			children = (
+				9FB80B8926DBB98400B72ADC /* LICENSE */,
 				9FB80B7E26DBB7BF00B72ADC /* .github */,
 				9FB80B7926DBB7BF00B72ADC /* .gitignore */,
 				9FB80B8226DBB7BF00B72ADC /* base */,
@@ -91,6 +95,7 @@
 				9FB80B7726DBB7BF00B72ADC /* basejsonconfig.cpp */,
 				9FB80B7826DBB7BF00B72ADC /* alloca.h */,
 				9FB80B8826DBB81700B72ADC /* charbuffer.h */,
+				9FB80B8A26DBB9A100B72ADC /* charbuffer.cpp */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -186,6 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FB80B8626DBB7BF00B72ADC /* basejsonconfig.cpp in Sources */,
+				9FB80B8B26DBB9A100B72ADC /* charbuffer.cpp in Sources */,
 				9FB80B8526DBB7BF00B72ADC /* makefile in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
