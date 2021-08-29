@@ -1,10 +1,11 @@
+// includes
 #include "config.h"
 #include "alloc.h"
 #include "msg_chain.h"
 
 msg_chain_t * msg_chain_add_msg(msg_chain_t *msg_chain, const char *msg) {
-    
-    if ( msg_chain == NULL ) {
+
+    if (msg_chain == NULL) {
         msg_chain = (msg_chain_t *)CALLOC( sizeof( msg_chain_t ), 1 );
         if ( msg_chain == NULL ) {
             log_e("msg_chain_t alloc failed");
@@ -18,7 +19,7 @@ msg_chain_t * msg_chain_add_msg(msg_chain_t *msg_chain, const char *msg) {
     }
  
     msg_chain_entry_t *msg_chain_entry = (msg_chain_entry_t *)CALLOC( sizeof( msg_chain_entry_t ), 1 );
-    if ( msg_chain_entry == NULL ) {
+    if (msg_chain_entry == NULL) {
         log_e("msg_chain_entry_t alloc failed");
         while( true );
     }
@@ -34,7 +35,7 @@ msg_chain_t * msg_chain_add_msg(msg_chain_t *msg_chain, const char *msg) {
         strcpy( (char*)msg_chain_entry->msg, msg );
     }
     
-    if ( msg_chain->first_msg_chain_entry == NULL ) {
+    if (msg_chain->first_msg_chain_entry == NULL) {
         msg_chain->first_msg_chain_entry = msg_chain_entry;
         msg_chain->entrys++;
     }
@@ -56,7 +57,7 @@ bool msg_chain_delete_msg_entry(msg_chain_t *msg_chain, int32_t entry) {
     int32_t msg_counter = 0;
     bool retval = false;
 
-    if ( msg_chain == NULL ) {
+    if (msg_chain == NULL) {
         return( retval );
     }
 
@@ -64,7 +65,7 @@ bool msg_chain_delete_msg_entry(msg_chain_t *msg_chain, int32_t entry) {
         return( retval );
     }
 
-    if ( entry > msg_chain->entrys ) {
+    if (entry > msg_chain->entrys) {
         return( retval );
     }
 
@@ -75,31 +76,31 @@ bool msg_chain_delete_msg_entry(msg_chain_t *msg_chain, int32_t entry) {
     do {
         if (entry == msg_counter) {
 
-            if ( msg_chain_entry->prev_msg != NULL ) {
+            if (msg_chain_entry->prev_msg != NULL) {
                 prev_msg_chain_entry = msg_chain_entry->prev_msg;
             }
-            if ( msg_chain_entry->next_msg != NULL ) {
+            if (msg_chain_entry->next_msg != NULL) {
                 next_msg_chain_entry = msg_chain_entry->next_msg;
             }
 
-            free( (void *)msg_chain_entry->msg );
+            free((void *)msg_chain_entry->msg);
 
-            if ( prev_msg_chain_entry && next_msg_chain_entry ) {
+            if (prev_msg_chain_entry && next_msg_chain_entry) {
                 prev_msg_chain_entry->next_msg = next_msg_chain_entry;
                 next_msg_chain_entry->prev_msg = prev_msg_chain_entry;
             }
-            else if( !prev_msg_chain_entry && next_msg_chain_entry ) {
+            else if(!prev_msg_chain_entry && next_msg_chain_entry) {
                 next_msg_chain_entry->prev_msg = NULL;
                 msg_chain->first_msg_chain_entry = next_msg_chain_entry;
             }
-            else if( prev_msg_chain_entry && !next_msg_chain_entry ) {
+            else if(prev_msg_chain_entry && !next_msg_chain_entry) {
                 prev_msg_chain_entry->next_msg = NULL;
             }
             else {
                 msg_chain->first_msg_chain_entry = NULL;
             }
 
-            free( msg_chain_entry );
+            free(msg_chain_entry);
             msg_chain->entrys--;
             retval = true;
             break;
@@ -123,23 +124,58 @@ time_t* msg_chain_get_msg_timestamp_entry(msg_chain_t *msg_chain, int32_t entry)
     time_t* retval = NULL;
     int32_t msg_counter = 0;
 
-    if ( msg_chain == NULL ) {
+    if (msg_chain == NULL) {
         return( retval );
     }
 
     if (msg_chain->first_msg_chain_entry == NULL) {
-        return( retval );
+        return(retval);
     }
 
-    if (entry > msg_chain->entrys) {
-        return( retval );
+    if ( entry > msg_chain->entrys ) {
+        return(retval);
     }
 
     msg_chain_entry_t *msg_chain_entry = msg_chain->first_msg_chain_entry;
+    
+    do {
+        if ( entry == msg_counter ) {
+            retval = &msg_chain_entry->timestamp;
+            break;
+        }
+        if ( msg_chain_entry->next_msg != NULL ) {
+            msg_counter++;
+            msg_chain_entry = msg_chain_entry->next_msg;
+        }
+        else {
+            break;
+        }
+    } while (true);
 
+    return(retval);
+}
+
+const char* msg_chain_get_msg_entry(msg_chain_t *msg_chain, int32_t entry) {
+    const char* retval = NULL;
+    int32_t msg_counter = 0;
+
+    if (msg_chain == NULL) {
+        return(retval);
+    }
+    
+    if (msg_chain->first_msg_chain_entry == NULL) {
+        return(retval);
+    }
+
+    if (entry > msg_chain->entrys) {
+        return(retval);
+    }
+
+    msg_chain_entry_t *msg_chain_entry = msg_chain->first_msg_chain_entry;
+    
     do {
         if (entry == msg_counter) {
-            retval = &msg_chain_entry->timestamp;
+            retval = msg_chain_entry->msg;
             break;
         }
         if (msg_chain_entry->next_msg != NULL) {
@@ -149,8 +185,73 @@ time_t* msg_chain_get_msg_timestamp_entry(msg_chain_t *msg_chain, int32_t entry)
         else {
             break;
         }
-    } while ( true );
+    } while (true);
 
-    return( retval );
+    return(retval);
 }
 
+int32_t msg_chain_get_entrys(msg_chain_t *msg_chain) {
+    int32_t msg_counter = 0;
+
+    if (msg_chain == NULL) {
+        return(msg_counter);
+    }
+
+    if (msg_chain->first_msg_chain_entry == NULL) {
+        return(msg_counter);
+    }
+
+    msg_counter++;
+    
+    msg_chain_entry_t *msg_chain_entry = msg_chain->first_msg_chain_entry;
+
+    while( msg_chain_entry->next_msg != NULL ) {
+        msg_counter++;
+        msg_chain_entry = msg_chain_entry->next_msg;
+    }
+    return( msg_counter );
+}
+
+msg_chain_t *msg_chain_delete(msg_chain_t *msg_chain) {
+    int32_t entrys = 0;
+
+    if (msg_chain == NULL) {
+        return( NULL );
+    }
+
+    entrys = msg_chain_get_entrys(msg_chain);
+
+    for (int32_t i = 0; i < entrys; i++) {
+        if ( !msg_chain_delete_msg_entry( msg_chain, 0 ) ) {
+            log_e("delete msg from msg_chain failed");
+            return( msg_chain );
+        }
+    }
+
+    free(msg_chain);
+
+    return(NULL);
+}
+
+void msg_chain_printf_msg_chain(msg_chain_t *msg_chain) {
+
+    if (msg_chain == NULL) {
+        return;
+    }
+
+    if (msg_chain->first_msg_chain_entry == NULL) {
+        return;
+    }
+    
+    int32_t msg_counter = 0;
+    msg_chain_entry_t *msg_chain_entry = msg_chain->first_msg_chain_entry;
+
+    while( true ) {
+        log_i("msg %d: %p < \"%s\" > %p", msg_counter, msg_chain_entry->prev_msg, msg_chain_entry->msg, msg_chain_entry->next_msg);
+        if (msg_chain_entry->next_msg == NULL) {
+            break;
+        }
+        msg_counter++;
+        msg_chain_entry = msg_chain_entry->next_msg;
+    };
+}
