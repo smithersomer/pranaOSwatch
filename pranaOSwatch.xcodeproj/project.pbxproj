@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F5054F526DBCAB60095A1F4 /* fakegps.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F5054F426DBCAB60095A1F4 /* fakegps.cpp */; };
 		9FB80B8526DBB7BF00B72ADC /* makefile in Sources */ = {isa = PBXBuildFile; fileRef = 9FB80B7426DBB7BF00B72ADC /* makefile */; };
 		9FB80B8626DBB7BF00B72ADC /* basejsonconfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FB80B7726DBB7BF00B72ADC /* basejsonconfig.cpp */; };
 		9FB80B8B26DBB9A100B72ADC /* charbuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FB80B8A26DBB9A100B72ADC /* charbuffer.cpp */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		9F5054F326DBCA010095A1F4 /* fakegps.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fakegps.h; sourceTree = "<group>"; };
+		9F5054F426DBCAB60095A1F4 /* fakegps.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = fakegps.cpp; sourceTree = "<group>"; };
 		9FB80B6526DBB78E00B72ADC /* pranaOSwatch */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = pranaOSwatch; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FB80B7326DBB7BF00B72ADC /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
 		9FB80B7426DBB7BF00B72ADC /* makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = makefile; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				9FB80B8A26DBB9A100B72ADC /* charbuffer.cpp */,
 				9FB80B8E26DBBCA600B72ADC /* json_psram_allocator.h */,
 				9F5054F326DBCA010095A1F4 /* fakegps.h */,
+				9F5054F426DBCAB60095A1F4 /* fakegps.cpp */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FB80B8626DBB7BF00B72ADC /* basejsonconfig.cpp in Sources */,
+				9F5054F526DBCAB60095A1F4 /* fakegps.cpp in Sources */,
 				9FB80B8B26DBB9A100B72ADC /* charbuffer.cpp in Sources */,
 				9FB80B8526DBB7BF00B72ADC /* makefile in Sources */,
 			);
