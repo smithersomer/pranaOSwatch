@@ -38,6 +38,7 @@
 		9FB80B8126DBB7BF00B72ADC /* platform.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = platform.ini; sourceTree = "<group>"; };
 		9FB80B8326DBB7BF00B72ADC /* favicon.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = favicon.ico; sourceTree = "<group>"; };
 		9FB80B8426DBB7BF00B72ADC /* index.htm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.htm; sourceTree = "<group>"; };
+		9FB80B8826DBB81700B72ADC /* charbuffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = charbuffer.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +90,7 @@
 				9FB80B7626DBB7BF00B72ADC /* basejsonconfig.h */,
 				9FB80B7726DBB7BF00B72ADC /* basejsonconfig.cpp */,
 				9FB80B7826DBB7BF00B72ADC /* alloca.h */,
+				9FB80B8826DBB81700B72ADC /* charbuffer.h */,
 			);
 			path = utils;
 			sourceTree = "<group>";
