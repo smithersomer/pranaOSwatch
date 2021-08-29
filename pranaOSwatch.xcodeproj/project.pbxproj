@@ -42,6 +42,7 @@
 		9FB80B8826DBB81700B72ADC /* charbuffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = charbuffer.h; sourceTree = "<group>"; };
 		9FB80B8926DBB98400B72ADC /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		9FB80B8A26DBB9A100B72ADC /* charbuffer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = charbuffer.cpp; sourceTree = "<group>"; };
+		9FB80B8E26DBBCA600B72ADC /* json_psram_allocator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = json_psram_allocator.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +97,7 @@
 				9FB80B7826DBB7BF00B72ADC /* alloca.h */,
 				9FB80B8826DBB81700B72ADC /* charbuffer.h */,
 				9FB80B8A26DBB9A100B72ADC /* charbuffer.cpp */,
+				9FB80B8E26DBBCA600B72ADC /* json_psram_allocator.h */,
 			);
 			path = utils;
 			sourceTree = "<group>";
