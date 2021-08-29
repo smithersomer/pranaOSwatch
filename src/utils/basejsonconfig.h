@@ -3,33 +3,33 @@
 
 #define MAX_CONFIG_FILE_NAME_LENGTH 32
 
+// includes
 #include "ArduinoJson.h"
-
 
 class BaseJsonConfig {
 public:
-    BaseJsonConfig(const char* configFileName);
+  BaseJsonConfig(const char* configFileName);
 
-    bool load();
+  bool load();
 
-    bool load(uint32_t size);
+  bool load( uint32_t size );
 
-    bool save();
+  bool save();
 
-    bool save(uint32_t size);
+  bool save( uint32_t size );
 
-    void debugPrint();
+  void debugPrint();
+  
+protected:
+
+  virtual bool onSave(JsonDocument& document) = 0;
+  virtual bool onLoad(JsonDocument& document) = 0;
+  virtual bool onDefault( void ) = 0;
+  virtual size_t getJsonBufferSize() { return 8192; }
 
 protected:
-    virtual bool onSave(JsonDocument& document) = 0;
-    virtual bool onLoad(JsonDocument& document) = 0;
+  char fileName[MAX_CONFIG_FILE_NAME_LENGTH];
+  bool prettyJson = true;
+};
 
-    virtual bool onDefault(void) = 0;
-    virtual size_t getJSonBufferSize() { return 0; }
-
-protected:
-    bool prettyJson = true;
-
-}; 
-
-#endif 
+#endif
