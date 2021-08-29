@@ -1,1 +1,8 @@
+# system cache
 .DS_Store
+
+# vscode cache
+.vscode/
+
+# jetbrains
+.idea/
