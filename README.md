@@ -1,12 +1,13 @@
 # pranaOSwatch
 pranaOS smartwatch support 
 
-# Installation
-```
-clone this repo in vscode and build it
-you need platformio extension to build it
-and a ttgo watch for running this
-```
+# Build Instructions:
+- want to use pranaOSwatch??
+- view the [build instructions](https://github.com/pranaOS/pranaOSwatch/blob/master/docs/build.md)
+
+# Contributing Docs:
+- want to contribute to pranaOS
+- contributing [docs](https://github.com/pranaOS/pranaOSwatch/blob/master/docs/contributing.md)
 
 # Social Media:
 - [discord](https://discord.gg/XmpBTmy9Bz)

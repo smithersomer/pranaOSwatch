@@ -14,6 +14,6 @@ $ pio run -t upload
 
 ## Vscode:
 
-- install (platformio)[https://marketplace.visualstudio.com/items?itemName=platformio.platformio-ide] extension
+- install [platformio](https://marketplace.visualstudio.com/items?itemName=platformio.platformio-ide) extension
 
 - press f5 to build using vscode
